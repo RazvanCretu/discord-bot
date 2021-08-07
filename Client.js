@@ -16,21 +16,6 @@ for (const file of commandFiles) {
 
 client.once("ready", async () => {
   console.log("Ready!");
-
-  try {
-    const channel = client.channels.cache.get("870058177251647539");
-    const webhooks = await channel.fetchWebhooks();
-    const webhook = webhooks.first();
-    // console.log(webhooks);
-
-    // await webhook.send("Webhook test", {
-    //   username: "some-username",
-    //   avatarURL: "https://i.imgur.com/wSTFkRM.png",
-    //   // embeds: [embed],
-    // });
-  } catch (error) {
-    console.error("Error trying to send: ", error);
-  }
 });
 
 client.once("reconnecting", () => {
