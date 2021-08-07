@@ -68,7 +68,6 @@ client.on("message", (message) => {
   }
 });
 
-console.log(process.env.DISCORD_TOKEN);
 client.login(process.env.DISCORD_TOKEN);
 
 module.exports = client;
