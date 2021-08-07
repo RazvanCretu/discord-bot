@@ -1,0 +1,6 @@
+{
+  "prefix": "!",
+  "host_summoner" : "https://eun1.api.riotgames.com/lol",
+  "host_ddragon" : "http://ddragon.leagueoflegends.com/cdn",
+  "host": "https://europe.api.riotgames.com/lol"
+}

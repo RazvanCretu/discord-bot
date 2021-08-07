@@ -1,0 +1,23 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "main": "MyBot.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "discord.js": "^12.3.1",
+    "dotenv": "^10.0.0",
+    "ffmpeg": "^0.0.4",
+    "ffmpeg-static": "^4.2.7",
+    "fluent-ffmpeg": "^2.1.2",
+    "ytdl-core": "^3.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "author": "Cretu Razvan",
+  "license": "MIT",
+  "keywords": [],
+  "description": ""
+}
