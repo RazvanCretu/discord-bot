@@ -2,6 +2,8 @@ const fs = require("fs");
 const Discord = require("discord.js");
 const { prefix } = require("./config.json");
 const dotenv = require("dotenv");
+const express = require("express");
+const app = express();
 dotenv.config();
 
 const client = new Discord.Client();
@@ -66,6 +68,16 @@ client.on("message", (message) => {
       `there was an error trying to execute command: '${command}'!`
     );
   }
+});
+
+const port = process.env.PORT || 8080;
+
+app.use(express.static(__dirname + "/public"));
+app.get("/", (req, res) => {
+  res.render("index");
+});
+app.listen(port, () => {
+  console.log("App up!");
 });
 
 client.login(process.env.DISCORD_TOKEN);
