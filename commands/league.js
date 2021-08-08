@@ -3,11 +3,15 @@ const { host, host_summoner, host_ddragon } = require("..//config.json");
 const { MessageEmbed } = require("discord.js");
 
 const fetchRiot = async (uri) => {
-  const { data } = await axios.get(uri, {
-    headers: { "X-Riot-Token": process.env.RIOT_KEY },
-  });
-
-  return data;
+  try {
+    const { data } = await axios.get(uri, {
+      headers: { "X-Riot-Token": process.env.RIOT_KEY },
+    });
+    return data;
+  } catch (err) {
+    console.log(err.message);
+    return;
+  }
 };
 
 module.exports = {
@@ -54,7 +58,7 @@ module.exports = {
           value: `K: ${games[0].kills} | D: ${games[0].deaths} | A: ${
             games[0].assists
           }\n**Mode**: ${games[0].gameMode}\n**Result**: ${
-            games[0].win ? "Win" : "Lost"
+            games[0].win ? ":white_check_mark:" : ":x:"
           }`,
           inline: true,
         },
@@ -63,7 +67,7 @@ module.exports = {
           value: `K: ${games[1].kills} | D: ${games[1].deaths} | A: ${
             games[1].assists
           }\n**Mode**: ${games[1].gameMode}\n**Result**: ${
-            games[1].win ? "Win" : "Lost"
+            games[1].win ? ":white_check_mark:" : ":x:"
           }`,
           inline: true,
         },
@@ -72,7 +76,7 @@ module.exports = {
           value: `K: ${games[2].kills} | D: ${games[2].deaths} | A: ${
             games[2].assists
           }\n**Mode**: ${games[2].gameMode}\n**Result**: ${
-            games[2].win ? "Win" : "Lost"
+            games[2].win ? ":white_check_mark:" : ":x:"
           }`,
           inline: true,
         },
@@ -81,7 +85,7 @@ module.exports = {
           value: `K: ${games[3].kills} | D: ${games[3].deaths} | A: ${
             games[3].assists
           }\n**Mode**: ${games[3].gameMode}\n**Result**: ${
-            games[3].win ? "Win" : "Lost"
+            games[3].win ? ":white_check_mark:" : ":x:"
           }`,
           inline: true,
         },
@@ -90,7 +94,7 @@ module.exports = {
           value: `K: ${games[4].kills} | D: ${games[4].deaths} | A: ${
             games[4].assists
           }\n**Mode**: ${games[4].gameMode}\n**Result**: ${
-            games[4].win ? "Win" : "Lost"
+            games[4].win ? ":white_check_mark:" : ":x:"
           }`,
           inline: true,
         }
